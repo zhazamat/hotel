@@ -27,6 +27,7 @@ public class HotelNumber {
         DOLLAR,
         EURO
     }
+    private Double square;
    private Integer floor;
 
 
