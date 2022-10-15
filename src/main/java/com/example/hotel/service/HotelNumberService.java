@@ -35,9 +35,15 @@ public class HotelNumberService {
                 .collect(Collectors.toList());
     }
 
-public Double getSumWithDiscount(Integer day,Integer number){
+      public Double getSumWithDiscount(Integer day,Integer number){
        return (getHotelNumbers().get(number-1).getCost()-(getHotelNumbers().get(number-1).getCost()*getDiscount(day)))*day;
 }
-
+       public List<String>getInfo(Integer day,Integer number){
+        List<String>info=new ArrayList<>();
+        info.add(  getSumWithDiscount(day,number).toString()+" $ with discount");
+        info.add(day.toString()+" day");
+        info.add(number.toString()+" number");
+        return info.stream().collect(Collectors.toList());
+       }
 
 }

@@ -35,5 +35,8 @@ public class HotelNumberController {
     public Double getSumWithDiscount(@RequestParam Integer day,@RequestParam Integer number) {
     return hotelNumberService.getSumWithDiscount(day,number);
     }
-
+@GetMapping("/info")
+    public List<String>getInfo(@RequestParam Integer day,@RequestParam Integer number){
+        return hotelNumberService.getInfo(day,number);
+    }
 }
