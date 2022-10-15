@@ -1,2 +1,4 @@
-package com.example.hotel.service;public class HotelRepository {
+package com.example.hotel.repository;
+
+public class HotelRepository {
 }
