@@ -28,13 +28,16 @@ public class HotelNumberService {
     }
 
 
-    public  List<Double> getCostWithDiscount(Integer day){
+    public  List<Double> getSumAllRoomWithDiscount(Integer day){
         return getHotelNumbers()
                 .stream()
-                .map(i->i.getCost()-(i.getCost()*getDiscount(day)))
+                .map((i)->(i.getCost()-(i.getCost()*getDiscount(day)))*day)
                 .collect(Collectors.toList());
     }
 
+public Double getSumWithDiscount(Integer day,Integer number){
+       return (getHotelNumbers().get(number-1).getCost()-(getHotelNumbers().get(number-1).getCost()*getDiscount(day)))*day;
+}
 
 
 }

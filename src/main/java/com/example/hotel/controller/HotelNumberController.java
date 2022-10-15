@@ -27,10 +27,13 @@ public class HotelNumberController {
         return hotelNumberService.getDiscount(day);
     }
 
-    @GetMapping("/cost_with_discount")
-    public List<Double> getCostWithDiscount(@RequestParam Integer day){
-       return hotelNumberService.getCostWithDiscount(day);
+    @GetMapping("/total_with_discount")
+    public List<Double> getSumAllRoomWithDiscount(@RequestParam Integer day){
+       return hotelNumberService.getSumAllRoomWithDiscount(day);
     }
-
+    @GetMapping("/total_with_discount_room")
+    public Double getSumWithDiscount(@RequestParam Integer day,@RequestParam Integer number) {
+    return hotelNumberService.getSumWithDiscount(day,number);
+    }
 
 }
